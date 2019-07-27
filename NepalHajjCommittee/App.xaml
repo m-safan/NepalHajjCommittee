@@ -1,0 +1,189 @@
+﻿<prism:PrismApplication x:Class="NepalHajjCommittee.App"
+                        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                        xmlns:prism="http://prismlibrary.com/"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                        xmlns:system="clr-namespace:System;assembly=mscorlib"
+                        xmlns:converters="clr-namespace:NepalHajjCommittee.Converters">
+    <Application.Resources>
+        <ResourceDictionary>
+            <system:Double x:Key="ListViewTitleSize">24.0</system:Double>
+            <system:Double x:Key="HeadingFontSizeFeature">40.0</system:Double>
+            <system:Double x:Key="HeadingFontSize1">30.0</system:Double>
+            <system:Double x:Key="HeadingFontSize2">24.0</system:Double>
+            <system:Double x:Key="HeadingFontSize3">20.0</system:Double>
+            <system:Double x:Key="HeadingFontSize4">18.0</system:Double>
+            <system:Double x:Key="TitleFontSize">16.0</system:Double>
+            <system:Double x:Key="RegularFontSize">14.0</system:Double>
+            <system:Double x:Key="PaginationButtonWidth">40.0</system:Double>
+
+
+            <Color x:Key="GoodColor">#007f00</Color>
+            <Color x:Key="BadColor">#CC0000</Color>
+            <Color x:Key="InfoColor">#EEEEEE</Color>
+            <Color x:Key="WhiteColor">#FFFFFF</Color>
+            <Color x:Key="BlackColor">#000000</Color>
+            <Color x:Key="DarkGreyColor">#D9D9D9</Color>
+            <Color x:Key="TransparentColor">Transparent</Color>
+            <Color x:Key="LightGreyColor">#EEEEEE</Color>
+            <Color x:Key="LightBlueColor">#5F9DBF</Color>
+            <Color x:Key="MediumBlueColor">#204E78</Color>
+            <Color x:Key="BlueColor">#3173A0</Color>
+            <Color x:Key="DarkBlueColor">#0A153B</Color>
+            <Color x:Key="HighLightColor">#FDC400</Color>
+            <Color x:Key="SeparatorColor">#0F2633</Color>
+
+
+            <SolidColorBrush x:Key="DarkGreyBrush" Color="{StaticResource DarkGreyColor}"></SolidColorBrush>
+            <SolidColorBrush x:Key="WhiteBrush" Color="{StaticResource WhiteColor}"></SolidColorBrush>
+            <SolidColorBrush x:Key="BlackBrush" Color="{StaticResource BlackColor}"></SolidColorBrush>
+            <SolidColorBrush x:Key="BadColorBrush" Color="{StaticResource BadColor}"></SolidColorBrush>
+            <SolidColorBrush x:Key="GoodColorBrush" Color="{StaticResource GoodColor}"></SolidColorBrush>
+            <SolidColorBrush x:Key="InfoColorBrush" Color="{StaticResource InfoColor}"></SolidColorBrush>
+            <SolidColorBrush x:Key="TransparentBrush" Color="{StaticResource TransparentColor}"></SolidColorBrush>
+            <SolidColorBrush x:Key="LightGreyBrush" Color="{StaticResource LightGreyColor}"></SolidColorBrush>
+            <SolidColorBrush x:Key="LightBlueBrush" Color="{StaticResource LightBlueColor}"></SolidColorBrush>
+            <SolidColorBrush x:Key="MediumBlueBrush" Color="{StaticResource MediumBlueColor}"></SolidColorBrush>
+            <SolidColorBrush x:Key="BlueBrush" Color="{StaticResource BlueColor}"></SolidColorBrush>
+            <SolidColorBrush x:Key="DarkBlueBrush" Color="{StaticResource DarkBlueColor}"></SolidColorBrush>
+            <SolidColorBrush x:Key="HighLightBrush" Color="{StaticResource HighLightColor}"></SolidColorBrush>
+            <SolidColorBrush x:Key="SeparatorBrush" Color="{StaticResource SeparatorColor}"></SolidColorBrush>
+
+            <!-- Labels -->
+            <Style x:Key="LabelBase" TargetType="TextBlock">
+                <Setter Property="Margin" Value="10">
+                </Setter>
+                <Setter Property="Foreground" Value="{StaticResource WhiteBrush}">
+                </Setter>
+                <Setter Property="FontSize" Value="{StaticResource RegularFontSize}">
+                </Setter>
+            </Style>
+            <Style x:Key="FeatureHeading" TargetType="TextBlock" BasedOn="{StaticResource LabelBase}">
+                <Setter Property="FontSize" Value="{StaticResource HeadingFontSizeFeature}">
+                </Setter>
+            </Style>
+            <Style x:Key="Heading1" TargetType="TextBlock" BasedOn="{StaticResource LabelBase}">
+                <Setter Property="FontSize" Value="{StaticResource HeadingFontSize1}">
+                </Setter>
+            </Style>
+            <Style x:Key="Heading2" TargetType="TextBlock" BasedOn="{StaticResource LabelBase}">
+                <Setter Property="FontSize" Value="{StaticResource HeadingFontSize2}">
+                </Setter>
+            </Style>
+            <Style x:Key="Heading3" TargetType="TextBlock" BasedOn="{StaticResource LabelBase}">
+                <Setter Property="FontSize" Value="{StaticResource HeadingFontSize3}">
+                </Setter>
+            </Style>
+            <Style x:Key="Heading4" TargetType="TextBlock" BasedOn="{StaticResource LabelBase}">
+                <Setter Property="FontSize" Value="{StaticResource HeadingFontSize4}">
+                </Setter>
+            </Style>
+            <Style x:Key="NormalLabel" TargetType="TextBlock" BasedOn="{StaticResource LabelBase}">
+            </Style>
+            <Style x:Key="LightLabel" TargetType="TextBlock" BasedOn="{StaticResource LabelBase}">
+                <Setter Property="FontFamily" Value="sans-serif-light">
+                </Setter>
+            </Style>
+            <Style x:Key="WarningLabel" TargetType="TextBlock" BasedOn="{StaticResource LabelBase}">
+                <Setter Property="Foreground" Value="{StaticResource BadColorBrush}">
+                </Setter>
+                <Setter Property="FontStyle" Value="Oblique">
+                </Setter>
+            </Style>
+            <Style x:Key="RegularLabel" TargetType="TextBlock" BasedOn="{StaticResource LabelBase}" />
+
+            <!-- Buttons -->
+            <Style x:Key="ButtonBase" TargetType="Button">
+                <Setter Property="Background" Value="{StaticResource WhiteBrush}">
+                </Setter>
+                <Setter Property="Foreground" Value="{StaticResource BlackBrush}">
+                </Setter>
+                <Setter Property="FontSize" Value="{StaticResource HeadingFontSize3}">
+                </Setter>
+            </Style>
+            <Style x:Key="Button" TargetType="Button" BasedOn="{StaticResource ButtonBase}">
+                <Setter Property="Background" Value="{StaticResource LightGreyBrush}">
+                </Setter>
+                <Setter Property="Foreground" Value="{StaticResource DarkBlueBrush}">
+                </Setter>
+            </Style>
+            <Style x:Key="ButtonGood" TargetType="Button" BasedOn="{StaticResource ButtonBase}">
+                <Setter Property="Background" Value="{StaticResource GoodColorBrush}">
+                </Setter>
+                <Setter Property="Foreground" Value="{StaticResource WhiteBrush}">
+                </Setter>
+            </Style>
+            <Style x:Key="ButtonBad" TargetType="Button" BasedOn="{StaticResource ButtonBase}">
+                <Setter Property="Background" Value="{StaticResource BadColorBrush}">
+                </Setter>
+                <Setter Property="Foreground" Value="{StaticResource WhiteBrush}">
+                </Setter>
+            </Style>
+
+            <!-- Entries -->
+            <Style x:Key="EntryBase" TargetType="TextBox">
+                <Setter Property="FontSize" Value="{StaticResource RegularFontSize}">
+                </Setter>
+            </Style>
+            <Style x:Key="Entry" TargetType="TextBox" BasedOn="{StaticResource EntryBase}">
+            </Style>
+            <Style x:Key="EntryLarge" TargetType="TextBox" BasedOn="{StaticResource EntryBase}">
+                <Setter Property="FontSize" Value="{StaticResource HeadingFontSize3}">
+                </Setter>
+            </Style>
+
+            <!-- Password -->
+            <Style x:Key="PasswordBase" TargetType="PasswordBox">
+                <Setter Property="FontSize" Value="{StaticResource RegularFontSize}">
+                </Setter>
+            </Style>
+            <Style x:Key="Password" TargetType="PasswordBox" BasedOn="{StaticResource PasswordBase}">
+            </Style>
+            <Style x:Key="PasswordLarge" TargetType="PasswordBox" BasedOn="{StaticResource PasswordBase}">
+                <Setter Property="FontSize" Value="{StaticResource HeadingFontSize3}">
+                </Setter>
+            </Style>
+
+            <!-- Combo box -->
+            <Style x:Key="ComboBox" TargetType="ComboBox">
+                <Setter Property="FontSize" Value="{StaticResource HeadingFontSize3}"></Setter>
+            </Style>
+
+            <!-- Data grid Column Header -->
+            <Style x:Key="DataGridColumnHeader" TargetType="DataGridColumnHeader">
+                <Setter Property="FontWeight" Value="Bold"></Setter>
+                <Setter Property="FontSize" Value="{StaticResource RegularFontSize}"></Setter>
+            </Style>
+
+            <!-- Data Grid -->
+            <Style x:Key="DataGrid" TargetType="DataGrid">
+                <Setter Property="AutoGenerateColumns" Value="False"></Setter>
+                <Setter Property="CanUserAddRows" Value="False"></Setter>
+                <Setter Property="CanUserDeleteRows" Value="False"></Setter>
+                <Setter Property="CanUserReorderColumns" Value="True"></Setter>
+                <Setter Property="CanUserResizeColumns" Value="True"></Setter>
+                <Setter Property="CanUserResizeRows" Value="False"></Setter>
+                <Setter Property="CanUserSortColumns" Value="True"></Setter>
+                <Setter Property="IsReadOnly" Value="True"></Setter>
+            </Style>
+
+            <!-- Datepicker -->
+            <Style x:Key="DatePicker" TargetType="DatePicker">
+                <Setter Property="FontSize" Value="{StaticResource HeadingFontSize4}"></Setter>
+            </Style>
+
+            <!-- Grid -->
+            <Style x:Key="InnerGrid" TargetType="Grid">
+                <Setter Property="Margin" Value="5"></Setter>
+            </Style>
+
+            <!-- Checkbox -->
+            <Style x:Key="CheckBox" TargetType="CheckBox">
+                <Setter Property="FontSize" Value="{StaticResource RegularFontSize}"></Setter>
+                <Setter Property="Margin" Value="5"></Setter>
+                <Setter Property="Foreground" Value="{StaticResource WhiteBrush}"></Setter>
+            </Style>
+
+            <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        </ResourceDictionary>
+    </Application.Resources>
+</prism:PrismApplication>

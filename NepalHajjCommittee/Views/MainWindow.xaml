@@ -1,0 +1,63 @@
+﻿<Window x:Class="NepalHajjCommittee.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Title="{Binding Title}" Height="650" Width="1200" Icon="/NepalHajjCommittee;component/kaba.ico" MinWidth="1200" MinHeight="650">
+    <Grid Background="{StaticResource BlueBrush}">
+        <Grid Visibility="{Binding LoginWindowVisibility}">
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="User Name" Style="{StaticResource Heading2}"></TextBlock>
+                <TextBox Grid.Row="1" Text="{Binding UserName}" Style="{StaticResource EntryLarge}"></TextBox>
+                <TextBlock Grid.Row="2" Text="Password" Style="{StaticResource Heading2}"></TextBlock>
+                <PasswordBox Grid.Row="3" Password="admin" PasswordChar="*" x:Name="TxtPassword" Style="{StaticResource PasswordLarge}"></PasswordBox>
+                <Button Grid.Row="5" Style="{StaticResource Button}" Content="Login" Height="40" Command="{Binding LoginCommand}" CommandParameter="{Binding ElementName=TxtPassword}"></Button>
+            </Grid>
+        </Grid>
+        <Grid Visibility="{Binding WorkWindowVisibility}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Background="{StaticResource DarkBlueBrush}">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10"></RowDefinition>
+                        <RowDefinition Height="60"></RowDefinition>
+                        <RowDefinition Height="10"></RowDefinition>
+                        <RowDefinition Height="60"></RowDefinition>
+                        <RowDefinition Height="10"></RowDefinition>
+                        <RowDefinition Height="60"></RowDefinition>
+                        <RowDefinition Height="10"></RowDefinition>
+                        <RowDefinition Height="60"></RowDefinition>
+                        <RowDefinition Height="10"></RowDefinition>
+                        <RowDefinition Height="60"></RowDefinition>
+                        <RowDefinition Height="10"></RowDefinition>
+                        <RowDefinition Height="60"></RowDefinition>
+                        <RowDefinition Height="10"></RowDefinition>
+                        <RowDefinition Height="60"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="1" Style="{StaticResource Button}" Content="Home" Command="{Binding NavigateToPage}" CommandParameter="Welcome"></Button>
+                    <Button Grid.Row="3" Style="{StaticResource Button}" Content="Group Management" Command="{Binding NavigateToPage}" CommandParameter="GroupManagement"></Button>
+                    <Button Grid.Row="5" Style="{StaticResource Button}" Content="Hotel Management" Command="{Binding NavigateToPage}" CommandParameter="HotelManagement"></Button>
+                    <Button Grid.Row="7" Style="{StaticResource Button}" Content="Check-in Group" Command="{Binding NavigateToPage}" CommandParameter="CheckInGroup"></Button>
+                    <Button Grid.Row="9" Style="{StaticResource Button}" Content="Report" Command="{Binding NavigateToPage}" CommandParameter="ReportPage"></Button>
+                    <Button Grid.Row="11" Style="{StaticResource Button}" Content="Bus Boarding List" Command="{Binding NavigateToPage}" CommandParameter="BusBoardingList"></Button>
+                    <Button Grid.Row="13" Style="{StaticResource Button}" Content="Logout" Command="{Binding LogoutCommand}"></Button>
+                </Grid>
+            </Grid>
+            <ContentControl Grid.Column="1" prism:RegionManager.RegionName="ContentRegion" />
+        </Grid>
+    </Grid>
+</Window>

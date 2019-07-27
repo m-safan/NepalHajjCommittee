@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="NepalHajjCommittee.Views.ManageGroup"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="clr-namespace:NepalHajjCommittee.Controls"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Groups" Style="{StaticResource Heading1}"/>
+        <Grid Grid.Row="1" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Year" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+            <ComboBox ItemsSource="{Binding Years}" Style="{StaticResource ComboBox}" Grid.Column="1"
+                  SelectedItem="{Binding SelectedYear}" HorizontalAlignment="Stretch"></ComboBox>
+        </Grid>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" >
+            <Button Style="{StaticResource ButtonGood}" Content="Add" Command="{Binding AddGroup}" Margin="10" Width="100"></Button>
+            <Button Style="{StaticResource Button}" Content="Edit" Command="{Binding EditGroup}" IsEnabled="{Binding IsGroupSelected}" Margin="10" Width="100"></Button>
+            <Button Style="{StaticResource ButtonBad}" Content="Delete" Command="{Binding DeleteGroup}" IsEnabled="{Binding IsGroupSelected}" Margin="10" Width="100"></Button>
+        </StackPanel>
+        <DataGrid Style="{StaticResource DataGrid}" Grid.Row="3" ItemsSource="{Binding AvailableGroups}" SelectionMode="Single" 
+                  SelectedItem="{Binding SelectedGroup}" Margin="10,0,10,10">
+            <DataGrid.Columns>
+                <controls:TextColumn Header="Name" Binding="{Binding Name}"></controls:TextColumn>
+                <controls:TextColumn Header="State" Binding="{Binding StateName}"></controls:TextColumn>
+                <controls:TextColumn Header="Arrival Date Makkah" Binding="{Binding ArrivalDateMakkah}"></controls:TextColumn>
+                <controls:TextColumn Header="Departure Date Makkah" Binding="{Binding DepartureDateMakkah}"></controls:TextColumn>
+                <controls:TextColumn Header="Arrival Date Madinah" Binding="{Binding ArrivalDateMadinah}"></controls:TextColumn>
+                <controls:TextColumn Header="Departure Data Madinah" Binding="{Binding DepartureDateMadinah}"></controls:TextColumn>
+                <controls:TextColumn Header="Incoming Flight" Binding="{Binding IncomingFlight}"></controls:TextColumn>
+                <controls:TextColumn Header="Outgoing Flight" Binding="{Binding OutgoingFlight}"></controls:TextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

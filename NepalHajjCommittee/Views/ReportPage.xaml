@@ -1,0 +1,158 @@
+﻿<UserControl x:Class="NepalHajjCommittee.Views.ReportPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="clr-namespace:NepalHajjCommittee.Controls"
+             prism:ViewModelLocator.AutoWireViewModel="True" x:Name="ControlReportPage">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Reports" Style="{StaticResource Heading1}"/>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.33*"/>
+                <ColumnDefinition Width="0.33*"/>
+                <ColumnDefinition Width="0.33*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Style="{StaticResource InnerGrid}" Grid.Row="0" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Year" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+                <ComboBox Grid.Column="1" Style="{StaticResource ComboBox}" ItemsSource="{Binding Years}" SelectedItem="{Binding FilterModel.VisitYear}"></ComboBox>
+            </Grid>
+            <Grid Style="{StaticResource InnerGrid}" Grid.Row="0" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Name" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+                <TextBox Grid.Column="1" Style="{StaticResource EntryLarge}" Text="{Binding FilterModel.Name}"></TextBox>
+            </Grid>
+            <Grid Style="{StaticResource InnerGrid}" Grid.Row="0" Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Group Name" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+                <TextBox Grid.Column="1" Style="{StaticResource EntryLarge}" Text="{Binding FilterModel.GroupName}"></TextBox>
+            </Grid>
+            <Grid Style="{StaticResource InnerGrid}" Grid.Row="1" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Batch Name" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+                <TextBox Grid.Column="1" Style="{StaticResource EntryLarge}" Text="{Binding FilterModel.BatchName}"></TextBox>
+            </Grid>
+            <Grid Style="{StaticResource InnerGrid}" Grid.Row="1" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Gender" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+                <ComboBox Grid.Column="1" Style="{StaticResource ComboBox}" ItemsSource="{Binding Genders}" SelectedItem="{Binding FilterModel.Gender}"></ComboBox>
+            </Grid>
+            <Grid Style="{StaticResource InnerGrid}" Grid.Row="1" Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="State" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+                <TextBox Grid.Column="1" Style="{StaticResource EntryLarge}" Text="{Binding FilterModel.State}"></TextBox>
+            </Grid>
+            <Grid Style="{StaticResource InnerGrid}" Grid.Row="2" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Passport Number" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+                <TextBox Grid.Column="1" Style="{StaticResource EntryLarge}" Text="{Binding FilterModel.PassportNo}"></TextBox>
+            </Grid>
+            <Grid Style="{StaticResource InnerGrid}" Grid.Row="2" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Contact Number" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+                <TextBox Grid.Column="1" Style="{StaticResource EntryLarge}" Text="{Binding FilterModel.ContactNo}"></TextBox>
+            </Grid>
+            <Grid Style="{StaticResource InnerGrid}" Grid.Row="2" Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Arrival Makkah" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+                <DatePicker Grid.Column="1" Style="{StaticResource DatePicker}" SelectedDate="{Binding FilterModel.ArrivalDateMakkah}"></DatePicker>
+            </Grid>
+            <Grid Style="{StaticResource InnerGrid}" Grid.Row="3" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Departure Makkah" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+                <DatePicker Grid.Column="1" Style="{StaticResource DatePicker}" SelectedDate="{Binding FilterModel.DepartureDateMakkah}"></DatePicker>
+            </Grid>
+            <Grid Style="{StaticResource InnerGrid}" Grid.Row="3" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Arrival Madinah" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+                <DatePicker Grid.Column="1" Style="{StaticResource DatePicker}" SelectedDate="{Binding FilterModel.ArrivalDateMadinah}"></DatePicker>
+            </Grid>
+            <Grid Style="{StaticResource InnerGrid}" Grid.Row="3" Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Departure Madinah" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+                <DatePicker Grid.Column="1" Style="{StaticResource DatePicker}" SelectedDate="{Binding FilterModel.DepartureDateMadinah}"></DatePicker>
+            </Grid>
+            <Grid Style="{StaticResource InnerGrid}" Grid.Row="4" Grid.Column="0">
+            </Grid>
+            <Grid Style="{StaticResource InnerGrid}" Grid.Row="4" Grid.Column="1">
+            </Grid>
+            <Grid Style="{StaticResource InnerGrid}" Grid.Row="4" Grid.Column="2">
+                <Button Style="{StaticResource ButtonGood}" Content="Search" Command="{Binding SearchCommand}"/>
+            </Grid>
+        </Grid>
+
+        <DataGrid Grid.Row="2" ItemsSource="{Binding SearchedResults}" Style="{StaticResource DataGrid}">
+            <DataGrid.Columns>
+                <controls:TextColumn Header="Name" Binding="{Binding Name}"/>
+                <controls:TextColumn Header="Gender" Binding="{Binding Gender}"/>
+                <controls:TextColumn Header="Passport Number" Binding="{Binding PassportNo}"/>
+                <controls:TextColumn Header="Contact Number" Binding="{Binding ContactNo}"/>
+                <controls:TextColumn Header="State" Binding="{Binding StateName}"/>
+                <controls:TextColumn Header="Group Name" Binding="{Binding GroupName}"/>
+                <controls:TextColumn Header="Batch Name" Binding="{Binding BatchName}"/>
+                <controls:TextColumn Header="Arriaval Date Makkah" Binding="{Binding ArrivalDateMakkah}"/>
+                <controls:TextColumn Header="Departure Date Makkah" Binding="{Binding DepartureDateMakkah}"/>
+                <controls:TextColumn Header="Arriaval Date Madinah" Binding="{Binding ArrivalDateMadinah}"/>
+                <controls:TextColumn Header="Departure Date Madinah" Binding="{Binding DepartureDateMadinah}"/>
+                <controls:TextColumn Header="Room No Makkah" Binding="{Binding MakkahRoomNo}"/>
+                <controls:TextColumn Header="Room No Madinah" Binding="{Binding MadinahRoomNo}"/>
+                <controls:TextColumn Header="Bus Number" Binding="{Binding BusNumber}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Margin="5" Style="{StaticResource Button}" Content="Export" Width="130" Command="{Binding ExportCommand}" IsEnabled="{Binding IsExportEnabled}"/>
+            <Button Margin="5" Style="{StaticResource Button}" Content="View" Width="130"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

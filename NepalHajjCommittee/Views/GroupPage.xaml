@@ -1,0 +1,124 @@
+﻿<UserControl x:Class="NepalHajjCommittee.Views.GroupPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:controls="clr-namespace:NepalHajjCommittee.Controls"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="{Binding ButtonPanelHeight}"/>
+            <RowDefinition Height="{Binding BatchGridHeight}"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Group" Style="{StaticResource Heading1}"/>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Style="{StaticResource InnerGrid}" Grid.Row="0" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Year" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+                <ComboBox Grid.Column="1" Style="{StaticResource ComboBox}" ItemsSource="{Binding Years}" SelectedItem="{Binding GroupModel.VisitYear}"></ComboBox>
+            </Grid>
+            <Grid Style="{StaticResource InnerGrid}" Grid.Row="0" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Group Name" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+                <TextBox Grid.Column="1" Style="{StaticResource EntryLarge}" Text="{Binding GroupModel.Name}"></TextBox>
+            </Grid>
+            <Grid Style="{StaticResource InnerGrid}" Grid.Row="1" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Arrival Data Makkah" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+                <DatePicker Style="{StaticResource DatePicker}" Grid.Column="1" SelectedDate="{Binding GroupModel.ArrivalDateMakkah}"></DatePicker>
+            </Grid>
+            <Grid Style="{StaticResource InnerGrid}" Grid.Row="1" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Departure Data Makkah" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+                <DatePicker Style="{StaticResource DatePicker}" Grid.Column="1" SelectedDate="{Binding GroupModel.DepartureDateMakkah}"></DatePicker>
+            </Grid>
+            <Grid Style="{StaticResource InnerGrid}" Grid.Row="2" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Arrival Data Madinah" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+                <DatePicker Style="{StaticResource DatePicker}" Grid.Column="1" SelectedDate="{Binding GroupModel.ArrivalDateMadinah}"></DatePicker>
+            </Grid>
+            <Grid Style="{StaticResource InnerGrid}" Grid.Row="2" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Departure Data Madinah" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+                <DatePicker Style="{StaticResource DatePicker}" Grid.Column="1" SelectedDate="{Binding GroupModel.DepartureDateMadinah}"></DatePicker>
+            </Grid>
+            <Grid Style="{StaticResource InnerGrid}" Grid.Row="3" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Incoming Flight No" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+                <TextBox Style="{StaticResource EntryLarge}" Grid.Column="1" Text="{Binding GroupModel.IncomingFlight}"></TextBox>
+            </Grid>
+            <Grid Style="{StaticResource InnerGrid}" Grid.Row="3" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Outgoing Flight No" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+                <TextBox Style="{StaticResource EntryLarge}" Grid.Column="1" Text="{Binding GroupModel.OutgoingFlight}"></TextBox>
+            </Grid>
+            <Grid Style="{StaticResource InnerGrid}" Grid.Row="4" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="State" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+                <TextBox Style="{StaticResource EntryLarge}" Grid.Column="1" Text="{Binding GroupModel.StateName}"></TextBox>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2" Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Batches" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" >
+                <Button Style="{StaticResource ButtonGood}" Content="Add" Command="{Binding AddBatch}" Margin="10" Width="100"></Button>
+                <Button Style="{StaticResource Button}" Content="Edit" Command="{Binding EditBatch}" IsEnabled="{Binding IsBatchSelected}" Margin="10" Width="100"></Button>
+                <Button Style="{StaticResource ButtonBad}" Content="Delete" Command="{Binding DeleteBatch}" IsEnabled="{Binding IsBatchSelected}" Margin="10" Width="100"></Button>
+            </StackPanel>
+        </Grid>
+        <DataGrid Grid.Row="3" Style="{StaticResource DataGrid}" Margin="0,10,0,0" ItemsSource="{Binding GroupModel.Batches}" SelectedItem="{Binding SelectedBatch}">
+            <DataGrid.Columns>
+                <controls:TextColumn Header="Batch Name" Binding="{Binding BatchName}"/>
+                <controls:TextColumn Header="Contact Number" Binding="{Binding ContactNo}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Margin="0,10,0,0" Height="40" Grid.Row="4" Style="{StaticResource Button}" Content="Back" Command="{Binding BackCommand}" Width="300" HorizontalAlignment="Left"></Button>
+        <Button Margin="0,10,0,0" Height="40" Grid.Row="4" Style="{StaticResource ButtonGood}" Content="Save" Command="{Binding SaveCommand}" Width="300" HorizontalAlignment="Right"></Button>
+    </Grid>
+</UserControl>

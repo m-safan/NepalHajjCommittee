@@ -1,0 +1,84 @@
+﻿<UserControl x:Class="NepalHajjCommittee.Views.BatchPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:controls="clr-namespace:NepalHajjCommittee.Controls"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="{Binding ButtonPanelHeight}"/>
+            <RowDefinition Height="{Binding PeopleGridHeight}"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Batch" Style="{StaticResource Heading1}"/>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" Grid.Column="0" VerticalAlignment="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid Style="{StaticResource InnerGrid}" Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Batch No" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+                    <TextBox Grid.Column="1" Style="{StaticResource EntryLarge}" Text="{Binding BatchModel.BatchName}"></TextBox>
+                </Grid>
+                <Grid Style="{StaticResource InnerGrid}" Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Contact Number" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+                    <TextBox Grid.Column="1" Style="{StaticResource EntryLarge}" Text="{Binding BatchModel.ContactNo}"></TextBox>
+                </Grid>
+            </Grid>
+            <Grid Style="{StaticResource InnerGrid}" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="200"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Photo" Style="{StaticResource Heading4}" Grid.Row="0"></TextBlock>
+                <Image Width="200" Height="200" HorizontalAlignment="Center" Source="{Binding Photo}" Grid.Row="1"></Image>
+                <Button Style="{StaticResource Button}" Content="Choose Image" Command="{Binding ChooseImage}" Grid.Row="2"></Button>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="2" Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="People" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" >
+                <Button Style="{StaticResource ButtonGood}" Content="Add" Command="{Binding AddPerson}" Margin="10" Width="100"></Button>
+                <Button Style="{StaticResource Button}" Content="Edit" Command="{Binding EditPerson}" IsEnabled="{Binding IsPersonSelected}" Margin="10" Width="100"></Button>
+                <Button Style="{StaticResource ButtonBad}" Content="Delete" Command="{Binding DeletePerson}" IsEnabled="{Binding IsPersonSelected}" Margin="10" Width="100"></Button>
+            </StackPanel>
+        </Grid>
+        <DataGrid Grid.Row="3" Style="{StaticResource DataGrid}" Margin="0,10,0,0" ItemsSource="{Binding BatchModel.People}" SelectedItem="{Binding SelectedPerson}">
+            <DataGrid.Columns>
+                <controls:TextColumn Header="Name" Binding="{Binding Name}"/>
+                <controls:TextColumn Header="Gender" Binding="{Binding Gender}"/>
+                <controls:TextColumn Header="Passport Number" Binding="{Binding PassportNo}"/>
+                <controls:TextColumn Header="Room No Makkah" Binding="{Binding Name}"/>
+                <controls:TextColumn Header="Room No Madinah" Binding="{Binding Name}"/>
+                <controls:TextColumn Header="Bus Number" Binding="{Binding BusNumber}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Margin="0,10,0,0" Height="40" Grid.Row="4" Style="{StaticResource Button}" Content="Back" Command="{Binding BackCommand}" Width="300" HorizontalAlignment="Left"></Button>
+        <Button Margin="0,10,0,0" Height="40" Grid.Row="4" Style="{StaticResource ButtonGood}" Content="Save" Command="{Binding SaveCommand}" Width="300" HorizontalAlignment="Right"></Button>
+    </Grid>
+</UserControl>
