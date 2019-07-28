@@ -20,6 +20,13 @@ namespace NepalHajjCommittee
                 Directory.CreateDirectory(folder + @"\" + Constants.MainFolder);
             if (!Directory.Exists(folder + @"\" + Constants.MainFolder + @"\" + Constants.ImageFolder))
                 Directory.CreateDirectory(folder + @"\" + Constants.MainFolder + @"\" + Constants.ImageFolder);
+
+            if (!File.Exists(folder + @"\" + Constants.MainFolder + @"\embasy.jpg"))
+                File.Copy(Environment.CurrentDirectory + @"\embasy.jpg", folder + @"\" + Constants.MainFolder + @"\embasy.jpg");
+            if (!File.Exists(folder + @"\" + Constants.MainFolder + @"\flag.png"))
+                File.Copy(Environment.CurrentDirectory + @"\flag.png", folder + @"\" + Constants.MainFolder + @"\flag.png");
+            if (!File.Exists(folder + @"\" + Constants.MainFolder + @"\printing.html"))
+                File.Copy(Environment.CurrentDirectory + @"\printing.html", folder + @"\" + Constants.MainFolder + @"\printing.html");
         }
 
         protected override Window CreateShell()
@@ -41,6 +48,7 @@ namespace NepalHajjCommittee
             containerRegistry.RegisterForNavigation<RoomPage, RoomPageViewModel>(Constants.RoomPage);
             containerRegistry.RegisterForNavigation<CheckinPage, CheckinPageViewModel>(Constants.CheckInGroup);
             containerRegistry.RegisterForNavigation<RoomAllocationPage, RoomAllocationPageViewModel>(Constants.RoomAllocationPage);
+            containerRegistry.RegisterForNavigation<BusPage, BusPageViewModel>(Constants.BusPage);
         }
     }
 }

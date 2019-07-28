@@ -152,7 +152,7 @@
 
         <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Margin="5" Style="{StaticResource Button}" Content="Export" Width="130" Command="{Binding ExportCommand}" IsEnabled="{Binding IsExportEnabled}"/>
-            <Button Margin="5" Style="{StaticResource Button}" Content="View" Width="130"/>
+            <!--<Button Margin="5" Style="{StaticResource Button}" Content="View" Width="130"/>-->
         </StackPanel>
     </Grid>
 </UserControl>

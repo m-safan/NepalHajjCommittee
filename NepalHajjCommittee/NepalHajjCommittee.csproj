@@ -96,6 +96,7 @@
       <DependentUpon>DBEntityModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\BatchDTO.cs" />
+    <Compile Include="Models\BusDetails.cs" />
     <Compile Include="Models\ColumnVisibility.cs" />
     <Compile Include="Models\FilterModel.cs" />
     <Compile Include="Models\HaajiGroupDTO.cs" />
@@ -103,6 +104,7 @@
     <Compile Include="Models\RoomDTO.cs" />
     <Compile Include="Models\SearchedResults.cs" />
     <Compile Include="ViewModels\BatchPageViewModel.cs" />
+    <Compile Include="ViewModels\BusPageViewModel.cs" />
     <Compile Include="ViewModels\CheckinPageViewModel.cs" />
     <Compile Include="ViewModels\GroupPageViewModel.cs" />
     <Compile Include="ViewModels\ManageGroupViewModel.cs" />
@@ -114,6 +116,9 @@
     <Compile Include="ViewModels\WelcomePageViewModel.cs" />
     <Compile Include="Views\BatchPage.xaml.cs">
       <DependentUpon>BatchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BusPage.xaml.cs">
+      <DependentUpon>BusPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\CheckinPage.xaml.cs">
       <DependentUpon>CheckinPage.xaml</DependentUpon>
@@ -143,6 +148,10 @@
       <DependentUpon>WelcomePage.xaml</DependentUpon>
     </Compile>
     <Page Include="Views\BatchPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BusPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -251,6 +260,12 @@
       <DependentUpon>DBEntityModel.edmx</DependentUpon>
       <LastGenOutput>DBEntityModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Images\embasy.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\flag.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\861896.jpg">

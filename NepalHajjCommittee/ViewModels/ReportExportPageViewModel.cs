@@ -130,12 +130,12 @@ namespace NepalHajjCommittee.ViewModels
 
         private void AddData(StringBuilder stringBuilder, object data)
         {
-            stringBuilder.Append($"<td>{data.ToString()}</td>");
+            stringBuilder.Append($"<td>{(data ?? string.Empty).ToString()}</td>");
         }
 
         private void AddHeader(StringBuilder stringBuilder, object data)
         {
-            stringBuilder.Append($"<th>{data.ToString()}</th>");
+            stringBuilder.Append($"<th>{(data ?? string.Empty).ToString()}</th>");
         }
     }
 }

@@ -1,0 +1,90 @@
+﻿<UserControl x:Class="NepalHajjCommittee.Views.BusPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:controls="clr-namespace:NepalHajjCommittee.Controls"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Style="{StaticResource InnerGrid}" Grid.Row="0" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Bus Number" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+                <TextBox Grid.Column="1" Style="{StaticResource EntryLarge}" Text="{Binding BusNumber}"></TextBox>
+            </Grid>
+            <Grid Style="{StaticResource InnerGrid}" Grid.Row="1" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Capacity" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+                <TextBox Grid.Column="1" Style="{StaticResource EntryLarge}" Text="{Binding Capacity}"></TextBox>
+            </Grid>
+            <Button Content="Add" Grid.Row="2" HorizontalAlignment="Right" Height="40" Width="150" Style="{StaticResource ButtonGood}"
+                    Command="{Binding AddBus}"/>
+            <DataGrid Style="{StaticResource DataGrid}" Grid.Row="3" ItemsSource="{Binding BusDetails}">
+                <DataGrid.Columns>
+                    <controls:TextColumn Header="Bus Number" Binding="{Binding BusNumber}"/>
+                    <controls:TextColumn Header="Capacity" Binding="{Binding Capacity}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid Style="{StaticResource InnerGrid}" Grid.Row="0" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Year" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+                <ComboBox Grid.Column="1" Style="{StaticResource ComboBox}" ItemsSource="{Binding Years}" SelectedItem="{Binding SelectedYear}"></ComboBox>
+            </Grid>
+            <Grid Style="{StaticResource InnerGrid}" Grid.Row="0" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Group" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+                <ComboBox Grid.Column="1" Style="{StaticResource ComboBox}" DisplayMemberPath="Name" ItemsSource="{Binding Groups}" SelectedItem="{Binding SelectedGroup}"></ComboBox>
+            </Grid>
+            <Grid Style="{StaticResource InnerGrid}" Grid.Row="1" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Available Seats" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+                <TextBox Grid.Column="1" Style="{StaticResource EntryLarge}" IsReadOnly="True" Text="{Binding AvailableSeats}"></TextBox>
+            </Grid>
+            <Grid Style="{StaticResource InnerGrid}" Grid.Row="1" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Required Seats" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+                <TextBox Grid.Column="1" IsReadOnly="True" Style="{StaticResource EntryLarge}" Text="{Binding RequiredSeats}"></TextBox>
+            </Grid>
+            <Button Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Height="40" Style="{StaticResource ButtonGood}" Width="150" HorizontalAlignment="Right"
+                    Content="Allocate Bus" Command="{Binding AllocateBus}"/>
+        </Grid>
+    </Grid>
+</UserControl>

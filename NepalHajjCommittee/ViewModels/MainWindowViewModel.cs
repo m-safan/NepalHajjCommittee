@@ -12,7 +12,7 @@ namespace NepalHajjCommittee.ViewModels
         private Visibility _loginWindowVisibility = Visibility.Visible;
         private Visibility _workWindowVisibility = Visibility.Collapsed;
         private ICommand _loginCommand;
-        private string _userName = "admin";
+        private string _userName;
         private ICommand _logoutCommand;
         private ICommand _navigateToPage;
 

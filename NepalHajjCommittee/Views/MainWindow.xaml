@@ -21,7 +21,7 @@
                 <TextBlock Grid.Row="0" Text="User Name" Style="{StaticResource Heading2}"></TextBlock>
                 <TextBox Grid.Row="1" Text="{Binding UserName}" Style="{StaticResource EntryLarge}"></TextBox>
                 <TextBlock Grid.Row="2" Text="Password" Style="{StaticResource Heading2}"></TextBlock>
-                <PasswordBox Grid.Row="3" Password="admin" PasswordChar="*" x:Name="TxtPassword" Style="{StaticResource PasswordLarge}"></PasswordBox>
+                <PasswordBox Grid.Row="3" PasswordChar="*" x:Name="TxtPassword" Style="{StaticResource PasswordLarge}"></PasswordBox>
                 <Button Grid.Row="5" Style="{StaticResource Button}" Content="Login" Height="40" Command="{Binding LoginCommand}" CommandParameter="{Binding ElementName=TxtPassword}"></Button>
             </Grid>
         </Grid>
@@ -56,7 +56,7 @@
                     <Button Grid.Row="7" Style="{StaticResource Button}" Content="Check-in Group" Command="{Binding NavigateToPage}" CommandParameter="CheckInGroup"></Button>
                     <Button Grid.Row="9" Style="{StaticResource Button}" Content="Manual Room Allocation" Command="{Binding NavigateToPage}" CommandParameter="RoomAllocationPage"></Button>
                     <Button Grid.Row="11" Style="{StaticResource Button}" Content="Report" Command="{Binding NavigateToPage}" CommandParameter="ReportPage"></Button>
-                    <Button Grid.Row="13" Style="{StaticResource Button}" Content="Bus Boarding List" Command="{Binding NavigateToPage}" CommandParameter="BusBoardingList"></Button>
+                    <Button Grid.Row="13" Style="{StaticResource Button}" Content="Bus Boarding List" Command="{Binding NavigateToPage}" CommandParameter="BusPage"></Button>
                     <Button Grid.Row="15" Style="{StaticResource Button}" Content="Logout" Command="{Binding LogoutCommand}"></Button>
                 </Grid>
             </Grid>
