@@ -24,5 +24,10 @@ namespace NepalHajjCommittee.Models
         public string Capacity { get; set; }
 
         public int AvailableBeds { get; set; }
+
+        public override string ToString()
+        {
+            return HotelName + " / " + RoomNumber;
+        }
     }
 }

@@ -14,6 +14,7 @@
         public const string ReportPage = "ReportPage";
         public const string RoomPage = "RoomPage";
         public const string CheckInGroup = "CheckInGroup";
+        public const string RoomAllocationPage = "RoomAllocationPage";
         public const string ReportExportPage = "ReportExportPage";
         public const string MainFolder = "NepalHaajiCommittee";
         public const string ImageFolder = "Images";

@@ -1,0 +1,102 @@
+﻿<UserControl x:Class="NepalHajjCommittee.Views.RoomAllocationPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:controls="clr-namespace:NepalHajjCommittee.Controls"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Style="{StaticResource InnerGrid}" Grid.Row="0" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Year" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+            <ComboBox Grid.Column="1" Style="{StaticResource ComboBox}" ItemsSource="{Binding Years}" SelectedItem="{Binding SelectedYear}"></ComboBox>
+        </Grid>
+        <Grid Style="{StaticResource InnerGrid}" Grid.Row="0" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="City" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+            <ComboBox Grid.Column="1" Style="{StaticResource ComboBox}" ItemsSource="{Binding Cities}" SelectedItem="{Binding SelectedCity}"></ComboBox>
+        </Grid>
+        <Grid Grid.Column="0" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Rooms not allocated" Style="{StaticResource Heading4}"/>
+            <DataGrid Grid.Row="1" ItemsSource="{Binding UnallocatedPeople}" Style="{StaticResource DataGrid}" SelectedItem="{Binding SelectedUnallocatedPerson}">
+                <DataGrid.Columns>
+                    <controls:TextColumn Header="Name" Binding="{Binding Name}"/>
+                    <controls:TextColumn Header="Gender" Binding="{Binding Gender}"/>
+                    <controls:TextColumn Header="Passport Number" Binding="{Binding PassportNo}"/>
+                    <controls:TextColumn Header="Group Name" Binding="{Binding GroupName}"/>
+                    <controls:TextColumn Header="Batch Name" Binding="{Binding BatchName}"/>
+                    <controls:TextColumn Header="Room No Makkah" Binding="{Binding MakkahRoomNo}"/>
+                    <controls:TextColumn Header="Room No Madinah" Binding="{Binding MadinahRoomNo}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Style="{StaticResource InnerGrid}" Grid.Row="0" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Room" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+                    <ComboBox Grid.Column="1" Style="{StaticResource ComboBox}" ItemsSource="{Binding Rooms}" SelectedItem="{Binding SelectedRoom}"></ComboBox>
+                </Grid>
+                <Grid Style="{StaticResource InnerGrid}" Grid.Row="0" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Bed" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+                    <ComboBox Grid.Column="1" Style="{StaticResource ComboBox}" DisplayMemberPath="BedNumber" ItemsSource="{Binding Beds}" SelectedItem="{Binding SelectedBed}"></ComboBox>
+                </Grid>
+                <Button Content="Allocate Room" HorizontalAlignment="Center" Style="{StaticResource ButtonGood}" Width="150" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                        Command="{Binding AllocateRoom}" IsEnabled="{Binding IsUnallocatedPersonSelected}"/>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Rooms Allocated" Style="{StaticResource Heading4}"/>
+            <DataGrid Grid.Row="1" ItemsSource="{Binding AllocatedPeople}" Style="{StaticResource DataGrid}" SelectedItem="{Binding SelectedAllocatedPerson}">
+                <DataGrid.Columns>
+                    <controls:TextColumn Header="Name" Binding="{Binding Name}"/>
+                    <controls:TextColumn Header="Gender" Binding="{Binding Gender}"/>
+                    <controls:TextColumn Header="Passport Number" Binding="{Binding PassportNo}"/>
+                    <controls:TextColumn Header="Group Name" Binding="{Binding GroupName}"/>
+                    <controls:TextColumn Header="Batch Name" Binding="{Binding BatchName}"/>
+                    <controls:TextColumn Header="Room No Makkah" Binding="{Binding MakkahRoomNo}"/>
+                    <controls:TextColumn Header="Room No Madinah" Binding="{Binding MadinahRoomNo}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button Style="{StaticResource ButtonBad}" Content="Unallocate" Width="150" 
+                    HorizontalAlignment="Right" Grid.Row="2" Command="{Binding UnallocateRoom}" IsEnabled="{Binding IsAllocatedPersonSelected}"></Button>
+        </Grid>
+    </Grid>
+</UserControl>

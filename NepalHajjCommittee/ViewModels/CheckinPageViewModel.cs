@@ -193,7 +193,7 @@ namespace NepalHajjCommittee.ViewModels
                 return;
             }
 
-            if(RequiredBeds<AvailableBeds)
+            if (RequiredBeds > AvailableBeds)
             {
                 MessageBox.Show("You do not have enough beds to allocate.", Constants.Error, MessageBoxButton.OK, MessageBoxImage.Stop);
                 return;

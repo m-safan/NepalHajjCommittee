@@ -8,6 +8,7 @@ namespace NepalHajjCommittee.Models
 {
     public class SearchedResults
     {
+        public int ID { get; set; }
         public string Name { get; set; }
         public string Gender { get; set; }
         public string PassportNo { get; set; }

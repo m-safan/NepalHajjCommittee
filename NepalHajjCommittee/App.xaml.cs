@@ -40,6 +40,7 @@ namespace NepalHajjCommittee
             containerRegistry.RegisterForNavigation<ReportExportPage, ReportExportPageViewModel>(Constants.ReportExportPage);
             containerRegistry.RegisterForNavigation<RoomPage, RoomPageViewModel>(Constants.RoomPage);
             containerRegistry.RegisterForNavigation<CheckinPage, CheckinPageViewModel>(Constants.CheckInGroup);
+            containerRegistry.RegisterForNavigation<RoomAllocationPage, RoomAllocationPageViewModel>(Constants.RoomAllocationPage);
         }
     }
 }

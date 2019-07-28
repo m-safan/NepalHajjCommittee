@@ -109,6 +109,7 @@
     <Compile Include="ViewModels\PersonPageViewModel.cs" />
     <Compile Include="ViewModels\ReportExportPageViewModel.cs" />
     <Compile Include="ViewModels\ReportPageViewModel.cs" />
+    <Compile Include="ViewModels\RoomAllocationPageViewModel.cs" />
     <Compile Include="ViewModels\RoomPageViewModel.cs" />
     <Compile Include="ViewModels\WelcomePageViewModel.cs" />
     <Compile Include="Views\BatchPage.xaml.cs">
@@ -131,6 +132,9 @@
     </Compile>
     <Compile Include="Views\ReportPage.xaml.cs">
       <DependentUpon>ReportPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RoomAllocationPage.xaml.cs">
+      <DependentUpon>RoomAllocationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RoomPage.xaml.cs">
       <DependentUpon>RoomPage.xaml</DependentUpon>
@@ -180,6 +184,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ReportPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RoomAllocationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -47,14 +47,17 @@
                         <RowDefinition Height="60"></RowDefinition>
                         <RowDefinition Height="10"></RowDefinition>
                         <RowDefinition Height="60"></RowDefinition>
+                        <RowDefinition Height="10"></RowDefinition>
+                        <RowDefinition Height="60"></RowDefinition>
                     </Grid.RowDefinitions>
                     <Button Grid.Row="1" Style="{StaticResource Button}" Content="Home" Command="{Binding NavigateToPage}" CommandParameter="Welcome"></Button>
                     <Button Grid.Row="3" Style="{StaticResource Button}" Content="Group Management" Command="{Binding NavigateToPage}" CommandParameter="GroupManagement"></Button>
                     <Button Grid.Row="5" Style="{StaticResource Button}" Content="Hotel Management" Command="{Binding NavigateToPage}" CommandParameter="RoomPage"></Button>
                     <Button Grid.Row="7" Style="{StaticResource Button}" Content="Check-in Group" Command="{Binding NavigateToPage}" CommandParameter="CheckInGroup"></Button>
-                    <Button Grid.Row="9" Style="{StaticResource Button}" Content="Report" Command="{Binding NavigateToPage}" CommandParameter="ReportPage"></Button>
-                    <Button Grid.Row="11" Style="{StaticResource Button}" Content="Bus Boarding List" Command="{Binding NavigateToPage}" CommandParameter="BusBoardingList"></Button>
-                    <Button Grid.Row="13" Style="{StaticResource Button}" Content="Logout" Command="{Binding LogoutCommand}"></Button>
+                    <Button Grid.Row="9" Style="{StaticResource Button}" Content="Manual Room Allocation" Command="{Binding NavigateToPage}" CommandParameter="RoomAllocationPage"></Button>
+                    <Button Grid.Row="11" Style="{StaticResource Button}" Content="Report" Command="{Binding NavigateToPage}" CommandParameter="ReportPage"></Button>
+                    <Button Grid.Row="13" Style="{StaticResource Button}" Content="Bus Boarding List" Command="{Binding NavigateToPage}" CommandParameter="BusBoardingList"></Button>
+                    <Button Grid.Row="15" Style="{StaticResource Button}" Content="Logout" Command="{Binding LogoutCommand}"></Button>
                 </Grid>
             </Grid>
             <ContentControl Grid.Column="1" prism:RegionManager.RegionName="ContentRegion" />
