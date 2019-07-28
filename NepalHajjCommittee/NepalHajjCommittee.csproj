@@ -95,19 +95,27 @@
     <Compile Include="Database\EDMX\Room.cs">
       <DependentUpon>DBEntityModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\BatchDTO.cs" />
     <Compile Include="Models\ColumnVisibility.cs" />
     <Compile Include="Models\FilterModel.cs" />
+    <Compile Include="Models\HaajiGroupDTO.cs" />
     <Compile Include="Models\PropertyChangeNotifier.cs" />
+    <Compile Include="Models\RoomDTO.cs" />
     <Compile Include="Models\SearchedResults.cs" />
     <Compile Include="ViewModels\BatchPageViewModel.cs" />
+    <Compile Include="ViewModels\CheckinPageViewModel.cs" />
     <Compile Include="ViewModels\GroupPageViewModel.cs" />
     <Compile Include="ViewModels\ManageGroupViewModel.cs" />
     <Compile Include="ViewModels\PersonPageViewModel.cs" />
     <Compile Include="ViewModels\ReportExportPageViewModel.cs" />
     <Compile Include="ViewModels\ReportPageViewModel.cs" />
+    <Compile Include="ViewModels\RoomPageViewModel.cs" />
     <Compile Include="ViewModels\WelcomePageViewModel.cs" />
     <Compile Include="Views\BatchPage.xaml.cs">
       <DependentUpon>BatchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CheckinPage.xaml.cs">
+      <DependentUpon>CheckinPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\GroupPage.xaml.cs">
       <DependentUpon>GroupPage.xaml</DependentUpon>
@@ -124,10 +132,17 @@
     <Compile Include="Views\ReportPage.xaml.cs">
       <DependentUpon>ReportPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\RoomPage.xaml.cs">
+      <DependentUpon>RoomPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\WelcomePage.xaml.cs">
       <DependentUpon>WelcomePage.xaml</DependentUpon>
     </Compile>
     <Page Include="Views\BatchPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CheckinPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -165,6 +180,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ReportPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RoomPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -213,19 +232,6 @@
     </PackageReference>
     <PackageReference Include="Prism.Unity" Version="7.1.0.431&#xD;" />
   </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Resource Include="Resources\861896.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\1200px-Flag_of_Nepal.svg.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="kaba.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
   <ItemGroup>
     <Content Include="Database\EDMX\DBEntityModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -237,6 +243,18 @@
       <DependentUpon>DBEntityModel.edmx</DependentUpon>
       <LastGenOutput>DBEntityModel.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\861896.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\1200px-Flag_of_Nepal.svg.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="kaba.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -25,6 +25,7 @@ create table [dbo].[Bed]
 (
 	[ID] [int] identity(1,1) not null,
 	[FK_ID_Room] [int] not null,
+	[BedNumber] [nvarchar](20) not null,
 	[IsAvailable] [bit] not null,
 	constraint [PK_Bed_ID] primary key clustered ([ID] asc),
 	constraint [FK_Bed_Room] foreign key ([FK_ID_Room]) references [dbo].[Room] ([ID])
@@ -42,6 +43,8 @@ create table [dbo].[HaajiGroup]
 	[OutgoingFlight] [nvarchar](50) not null,
 	[StateName] [nvarchar](100) not null,
 	[VisitYear] [int] not null,
+	[IsRoomAllotedMakkah] [bit] not null,
+	[IsRoomAllotedMadinah] [bit] not null,
 	constraint [PK_HaajiGroup_ID] primary key clustered ([ID] asc)
 )
 

@@ -23,6 +23,7 @@ namespace NepalHajjCommittee.Database.EDMX
     
         public int ID { get; set; }
         public int FK_ID_Room { get; set; }
+        public string BedNumber { get; set; }
         public bool IsAvailable { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

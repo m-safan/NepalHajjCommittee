@@ -72,9 +72,6 @@
                 <controls:TextColumn Header="Name" Binding="{Binding Name}"/>
                 <controls:TextColumn Header="Gender" Binding="{Binding Gender}"/>
                 <controls:TextColumn Header="Passport Number" Binding="{Binding PassportNo}"/>
-                <controls:TextColumn Header="Room No Makkah" Binding="{Binding Name}"/>
-                <controls:TextColumn Header="Room No Madinah" Binding="{Binding Name}"/>
-                <controls:TextColumn Header="Bus Number" Binding="{Binding BusNumber}"/>
             </DataGrid.Columns>
         </DataGrid>
 

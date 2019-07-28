@@ -21,6 +21,7 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FK_ID_Room" Type="int" Nullable="false" />
+          <Property Name="BedNumber" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="IsAvailable" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="HaajiGroup">
@@ -37,6 +38,8 @@
           <Property Name="OutgoingFlight" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="StateName" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="VisitYear" Type="int" Nullable="false" />
+          <Property Name="IsRoomAllotedMakkah" Type="bit" Nullable="false" />
+          <Property Name="IsRoomAllotedMadinah" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Person">
           <Key>
@@ -174,6 +177,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FK_ID_Room" Type="Int32" Nullable="false" />
+          <Property Name="BedNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IsAvailable" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="People" Relationship="Self.FK_Batch_Bed_Madinah" FromRole="Bed" ToRole="Person" />
           <NavigationProperty Name="People1" Relationship="Self.FK_Batch_Bed_Makkah" FromRole="Bed" ToRole="Person" />
@@ -193,6 +197,8 @@
           <Property Name="OutgoingFlight" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="StateName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="VisitYear" Type="Int32" Nullable="false" />
+          <Property Name="IsRoomAllotedMakkah" Type="Boolean" Nullable="false" />
+          <Property Name="IsRoomAllotedMadinah" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Batches" Relationship="Self.FK_Batch_HaajiGroup" FromRole="HaajiGroup" ToRole="Batch" />
         </EntityType>
         <EntityType Name="Person">
@@ -334,6 +340,7 @@
               <MappingFragment StoreEntitySet="Bed">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="FK_ID_Room" ColumnName="FK_ID_Room" />
+                <ScalarProperty Name="BedNumber" ColumnName="BedNumber" />
                 <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -351,6 +358,8 @@
                 <ScalarProperty Name="OutgoingFlight" ColumnName="OutgoingFlight" />
                 <ScalarProperty Name="StateName" ColumnName="StateName" />
                 <ScalarProperty Name="VisitYear" ColumnName="VisitYear" />
+                <ScalarProperty Name="IsRoomAllotedMakkah" ColumnName="IsRoomAllotedMakkah" />
+                <ScalarProperty Name="IsRoomAllotedMadinah" ColumnName="IsRoomAllotedMadinah" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

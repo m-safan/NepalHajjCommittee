@@ -133,8 +133,10 @@ namespace NepalHajjCommittee.ViewModels
 
                 FetchFromDatabase(PersonModel.ID);
 
-                MessageBox.Show("person information saved successfully", Constants.Success, MessageBoxButton.OK,
+                MessageBox.Show("Person information saved successfully", Constants.Success, MessageBoxButton.OK,
                     MessageBoxImage.Information);
+
+                ExecuteBackCommand();
             }
             catch
             {

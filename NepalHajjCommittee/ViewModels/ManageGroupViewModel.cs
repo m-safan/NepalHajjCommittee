@@ -53,6 +53,7 @@ namespace NepalHajjCommittee.ViewModels
             base.OnNavigatedTo(navigationContext);
 
             SelectedYear = DateTime.Now.Year;
+            FetchGroups();
         }
 
         private void ExecuteAddGroup()

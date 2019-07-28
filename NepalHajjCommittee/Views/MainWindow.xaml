@@ -50,7 +50,7 @@
                     </Grid.RowDefinitions>
                     <Button Grid.Row="1" Style="{StaticResource Button}" Content="Home" Command="{Binding NavigateToPage}" CommandParameter="Welcome"></Button>
                     <Button Grid.Row="3" Style="{StaticResource Button}" Content="Group Management" Command="{Binding NavigateToPage}" CommandParameter="GroupManagement"></Button>
-                    <Button Grid.Row="5" Style="{StaticResource Button}" Content="Hotel Management" Command="{Binding NavigateToPage}" CommandParameter="HotelManagement"></Button>
+                    <Button Grid.Row="5" Style="{StaticResource Button}" Content="Hotel Management" Command="{Binding NavigateToPage}" CommandParameter="RoomPage"></Button>
                     <Button Grid.Row="7" Style="{StaticResource Button}" Content="Check-in Group" Command="{Binding NavigateToPage}" CommandParameter="CheckInGroup"></Button>
                     <Button Grid.Row="9" Style="{StaticResource Button}" Content="Report" Command="{Binding NavigateToPage}" CommandParameter="ReportPage"></Button>
                     <Button Grid.Row="11" Style="{StaticResource Button}" Content="Bus Boarding List" Command="{Binding NavigateToPage}" CommandParameter="BusBoardingList"></Button>

@@ -30,6 +30,8 @@ namespace NepalHajjCommittee.Database.EDMX
         public string OutgoingFlight { get; set; }
         public string StateName { get; set; }
         public int VisitYear { get; set; }
+        public bool IsRoomAllotedMakkah { get; set; }
+        public bool IsRoomAllotedMadinah { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Batch> Batches { get; set; }

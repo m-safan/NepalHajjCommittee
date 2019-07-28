@@ -12,6 +12,8 @@
         public const string BatchPage = "BatchPage";
         public const string PersonPage = "PersonPage";
         public const string ReportPage = "ReportPage";
+        public const string RoomPage = "RoomPage";
+        public const string CheckInGroup = "CheckInGroup";
         public const string ReportExportPage = "ReportExportPage";
         public const string MainFolder = "NepalHaajiCommittee";
         public const string ImageFolder = "Images";

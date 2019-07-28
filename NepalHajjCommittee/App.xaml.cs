@@ -38,6 +38,8 @@ namespace NepalHajjCommittee
             containerRegistry.RegisterForNavigation<PersonPage, PersonPageViewModel>(Constants.PersonPage);
             containerRegistry.RegisterForNavigation<ReportPage, ReportPageViewModel>(Constants.ReportPage);
             containerRegistry.RegisterForNavigation<ReportExportPage, ReportExportPageViewModel>(Constants.ReportExportPage);
+            containerRegistry.RegisterForNavigation<RoomPage, RoomPageViewModel>(Constants.RoomPage);
+            containerRegistry.RegisterForNavigation<CheckinPage, CheckinPageViewModel>(Constants.CheckInGroup);
         }
     }
 }

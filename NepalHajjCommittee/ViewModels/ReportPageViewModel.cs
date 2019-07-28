@@ -106,8 +106,8 @@ namespace NepalHajjCommittee.ViewModels
                 Name = x.Name,
                 PassportNo = x.PassportNo,
                 StateName = x.Batch.HaajiGroup.StateName,
-                MadinahRoomNo = x.Bed1.Room.HotelName + " / " + x.Bed1.Room.RoomNumber,
-                MakkahRoomNo = x.Bed.Room.HotelName + " / " + x.Bed.Room.RoomNumber,
+                MadinahRoomNo = x.Bed.Room.HotelName + " / " + x.Bed.Room.RoomNumber,
+                MakkahRoomNo = x.Bed1.Room.HotelName + " / " + x.Bed1.Room.RoomNumber,
             }).ToList();
 
             if (!SearchedResults.Any())
