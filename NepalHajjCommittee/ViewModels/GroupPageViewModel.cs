@@ -141,8 +141,8 @@ namespace NepalHajjCommittee.ViewModels
                 return false;
             if (GroupModel.DepartureDateMakkah < GroupModel.ArrivalDateMakkah)
                 return false;
-            if (GroupModel.ArrivalDateMadinah < GroupModel.DepartureDateMakkah)
-                return false;
+            //if (GroupModel.ArrivalDateMadinah < GroupModel.DepartureDateMakkah)
+            //    return false;
             if (GroupModel.DepartureDateMadinah < GroupModel.ArrivalDateMadinah)
                 return false;
             return true;

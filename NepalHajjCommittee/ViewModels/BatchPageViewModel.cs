@@ -38,7 +38,7 @@ namespace NepalHajjCommittee.ViewModels
             {
                 try
                 {
-                    if (string.IsNullOrEmpty(BatchModel.Photo)) return null;
+                    if (BatchModel == null || string.IsNullOrEmpty(BatchModel.Photo)) return null;
 
                     var bitmap = new BitmapImage();
                     bitmap.BeginInit();

@@ -18,7 +18,10 @@ namespace NepalHajjCommittee.Models
         public string BatchName { get; set; }
         public string MakkahRoomNo { get; set; }
         public string MadinahRoomNo { get; set; }
-        public string BusNumber { get; set; }
+        public string MadinahToAirportBusNumber { get; set; }
+        public string MakkahToAirportBusNumber { get; set; }
+        public string MadinahToMakkahBusNumber { get; set; }
+        public string MakkahToMadinahBusNumber { get; set; }
         public DateTime ArrivalDateMakkah { get; set; }
         public DateTime DepartureDateMakkah { get; set; }
         public DateTime ArrivalDateMadinah { get; set; }

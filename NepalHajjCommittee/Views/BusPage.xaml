@@ -50,6 +50,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid Style="{StaticResource InnerGrid}" Grid.Row="0" Grid.Column="0">
                 <Grid.ColumnDefinitions>
@@ -72,10 +73,26 @@
                     <ColumnDefinition Width="0.5*"></ColumnDefinition>
                     <ColumnDefinition Width="0.5*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
+                <TextBlock Text="Batch" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+                <ComboBox Grid.Column="1" Style="{StaticResource ComboBox}" DisplayMemberPath="BatchName" ItemsSource="{Binding Batches}" SelectedItem="{Binding SelectedBatch}"></ComboBox>
+            </Grid>
+            <Grid Style="{StaticResource InnerGrid}" Grid.Row="1" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Bus Number" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+                <ComboBox Grid.Column="1" Style="{StaticResource ComboBox}" DisplayMemberPath="BusNumber" ItemsSource="{Binding BusDetails}" SelectedItem="{Binding SelectedBus}"></ComboBox>
+            </Grid>
+            <Grid Style="{StaticResource InnerGrid}" Grid.Row="2" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
                 <TextBlock Text="Available Seats" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
                 <TextBox Grid.Column="1" Style="{StaticResource EntryLarge}" IsReadOnly="True" Text="{Binding AvailableSeats}"></TextBox>
             </Grid>
-            <Grid Style="{StaticResource InnerGrid}" Grid.Row="1" Grid.Column="1">
+            <Grid Style="{StaticResource InnerGrid}" Grid.Row="2" Grid.Column="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.5*"></ColumnDefinition>
                     <ColumnDefinition Width="0.5*"></ColumnDefinition>
@@ -83,7 +100,15 @@
                 <TextBlock Text="Required Seats" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
                 <TextBox Grid.Column="1" IsReadOnly="True" Style="{StaticResource EntryLarge}" Text="{Binding RequiredSeats}"></TextBox>
             </Grid>
-            <Button Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Height="40" Style="{StaticResource ButtonGood}" Width="150" HorizontalAlignment="Right"
+            <Grid Style="{StaticResource InnerGrid}" Grid.Row="3" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Route" Style="{StaticResource Heading4}" Grid.Column="0"></TextBlock>
+                <ComboBox Grid.Column="1" Style="{StaticResource ComboBox}" ItemsSource="{Binding Routes}" SelectedItem="{Binding SelectedRoute}"></ComboBox>
+            </Grid>
+            <Button Grid.Column="1" Grid.Row="3" Height="40" Style="{StaticResource ButtonGood}" Width="150" HorizontalAlignment="Right"
                     Content="Allocate Bus" Command="{Binding AllocateBus}"/>
         </Grid>
     </Grid>

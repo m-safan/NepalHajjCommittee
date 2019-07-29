@@ -52,7 +52,10 @@
           <Property Name="PassportNo" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="FK_ID_Bed_Makkah" Type="int" />
           <Property Name="FK_ID_Bed_Madinah" Type="int" />
-          <Property Name="BusNumber" Type="nvarchar" MaxLength="500" />
+          <Property Name="MakkahToMadinahBusNumber" Type="nvarchar" MaxLength="500" />
+          <Property Name="MadinahToMakkahBusNumber" Type="nvarchar" MaxLength="500" />
+          <Property Name="MadinahToAirportBusNumber" Type="nvarchar" MaxLength="500" />
+          <Property Name="MakkahToAirportBusNumber" Type="nvarchar" MaxLength="500" />
           <Property Name="Photo" Type="nvarchar" MaxLength="200" />
           <Property Name="ContactNo" Type="nvarchar" MaxLength="20" />
         </EntityType>
@@ -212,7 +215,10 @@
           <Property Name="PassportNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="FK_ID_Bed_Makkah" Type="Int32" />
           <Property Name="FK_ID_Bed_Madinah" Type="Int32" />
-          <Property Name="BusNumber" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MakkahToMadinahBusNumber" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MadinahToMakkahBusNumber" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MadinahToAirportBusNumber" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MakkahToAirportBusNumber" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="Photo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="ContactNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Batch" Relationship="Self.FK_Batch_Person" FromRole="Person" ToRole="Batch" />
@@ -373,7 +379,10 @@
                 <ScalarProperty Name="PassportNo" ColumnName="PassportNo" />
                 <ScalarProperty Name="FK_ID_Bed_Makkah" ColumnName="FK_ID_Bed_Makkah" />
                 <ScalarProperty Name="FK_ID_Bed_Madinah" ColumnName="FK_ID_Bed_Madinah" />
-                <ScalarProperty Name="BusNumber" ColumnName="BusNumber" />
+                <ScalarProperty Name="MakkahToMadinahBusNumber" ColumnName="MakkahToMadinahBusNumber" />
+                <ScalarProperty Name="MadinahToMakkahBusNumber" ColumnName="MadinahToMakkahBusNumber" />
+                <ScalarProperty Name="MadinahToAirportBusNumber" ColumnName="MadinahToAirportBusNumber" />
+                <ScalarProperty Name="MakkahToAirportBusNumber" ColumnName="MakkahToAirportBusNumber" />
                 <ScalarProperty Name="Photo" ColumnName="Photo" />
                 <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
               </MappingFragment>

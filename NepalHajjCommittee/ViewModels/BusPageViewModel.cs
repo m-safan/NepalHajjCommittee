@@ -26,16 +26,58 @@ namespace NepalHajjCommittee.ViewModels
         private DelegateCommand _addBus;
         private string _busNumber;
         private string _capacity;
+        private List<Batch> _batches;
+        private Batch _selectedBatch;
+        private BusDetails _selectedBus;
+        private List<string> _routes;
+        private string _selectedRoute;
 
         public BusPageViewModel(IRegionManager regionManager, INepalHajjCommitteeRepository repository) : base(regionManager)
         {
             _repository = repository;
             Years = new List<int> { 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030 };
+
+            Routes = new List<string> { "Makkah to Madinah", "Makkah to Airport", "Madinah to Airport", "Madinah To Makkah" };
         }
 
         public ICommand AddBus => _addBus ?? (_addBus = new DelegateCommand(ExecuteAddBus));
 
         public ICommand AllocateBus => _allocateBus ?? (_allocateBus = new DelegateCommand(ExecuteAllocateBus));
+
+
+        public string SelectedRoute
+        {
+            get { return _selectedRoute; }
+            set { SetProperty(ref _selectedRoute, value); }
+        }
+        public List<string> Routes
+        {
+            get { return _routes; }
+            set { SetProperty(ref _routes, value); }
+        }
+        public BusDetails SelectedBus
+        {
+            get { return _selectedBus; }
+            set
+            {
+                SetProperty(ref _selectedBus, value);
+                BusChanged();
+            }
+        }
+        public Batch SelectedBatch
+        {
+            get { return _selectedBatch; }
+            set
+            {
+                SetProperty(ref _selectedBatch, value);
+                BatchChanged();
+            }
+        }
+        public List<Batch> Batches
+        {
+            get { return _batches; }
+            set { SetProperty(ref _batches, value); }
+        }
 
         public string Capacity
         {
@@ -107,6 +149,9 @@ namespace NepalHajjCommittee.ViewModels
             AvailableSeats = 0;
             RequiredSeats = 0;
             BusDetails = null;
+            SelectedBus = null;
+            SelectedBatch = null;
+            SelectedRoute = null;
 
             YearChanged();
         }
@@ -117,21 +162,32 @@ namespace NepalHajjCommittee.ViewModels
                 return;
             try
             {
-                var peopleCounter = 0;
-                for (int i = 0; i < BusDetails.Count; i++)
+                _people.ForEach(x =>
                 {
-                    if (peopleCounter == _people.Count) break;
-                    for (int j = 0; j < BusDetails[i].Capacity; j++)
-                    {
-                        if (peopleCounter == _people.Count) break;
-                        _people[peopleCounter].BusNumber = BusDetails[i].BusNumber;
-                        _repository.PersonRepository.Update(_people[peopleCounter++]);
-                    }
-                }
-
+                    if (SelectedRoute == "Makkah to Madinah")
+                        x.MakkahToMadinahBusNumber = SelectedBus.BusNumber;
+                    else if (SelectedRoute == "Makkah to Airport")
+                        x.MakkahToAirportBusNumber = SelectedBus.BusNumber;
+                    if (SelectedRoute == "Madinah to Airport")
+                        x.MadinahToAirportBusNumber = SelectedBus.BusNumber;
+                    if (SelectedRoute == "Madinah To Makkah")
+                        x.MadinahToMakkahBusNumber = SelectedBus.BusNumber;
+                    _repository.PersonRepository.Update(x);
+                });
                 _repository.Commit();
+
+                var bus = BusDetails.FirstOrDefault(x => x == SelectedBus);
+                bus.Capacity -= RequiredSeats;
+                if (bus.Capacity == 0)
+                    BusDetails.Remove(bus);
+
+                BusDetails = BusDetails.Where(x => true).ToList();
                 MessageBox.Show("Alloted bus number", Constants.Success, MessageBoxButton.OK, MessageBoxImage.Information);
-                RegionManager.RequestNavigate(Constants.ContentRegion, Constants.Welcome);
+
+                Batches.Remove(SelectedBatch);
+                Batches = Batches.Where(x => true).ToList();
+
+                SelectedBus = null;
             }
             catch
             {
@@ -142,9 +198,15 @@ namespace NepalHajjCommittee.ViewModels
         private void GroupChanged()
         {
             if (SelectedGroup == null) return;
-            var batchIDs = _repository.BatchRepository.GetAllQueryable().Where(x => x.FK_ID_HaajiGroup == SelectedGroup.ID).Select(x => x.ID).ToList();
-            _people = _repository.PersonRepository.GetMany(x => batchIDs.Contains(x.FK_ID_Batch)).ToList();
 
+            Batches = _repository.BatchRepository.GetMany(x => x.FK_ID_HaajiGroup == SelectedGroup.ID).ToList();
+        }
+
+        private void BatchChanged()
+        {
+            if (SelectedBatch == null) { RequiredSeats = 0; return; }
+
+            _people = _repository.PersonRepository.GetMany(x => x.FK_ID_Batch == SelectedBatch.ID).ToList();
             RequiredSeats = _people.Count;
         }
 
@@ -169,6 +231,14 @@ namespace NepalHajjCommittee.ViewModels
             BusDetails = busDetails;
 
             AvailableSeats = BusDetails.Sum(x => x.Capacity);
+        }
+
+        private void BusChanged()
+        {
+            if (SelectedBus == null)
+                AvailableSeats = 0;
+            else
+                AvailableSeats = SelectedBus.Capacity;
         }
     }
 }

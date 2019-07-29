@@ -21,7 +21,10 @@ namespace NepalHajjCommittee.Database.EDMX
         public string PassportNo { get; set; }
         public Nullable<int> FK_ID_Bed_Makkah { get; set; }
         public Nullable<int> FK_ID_Bed_Madinah { get; set; }
-        public string BusNumber { get; set; }
+        public string MakkahToMadinahBusNumber { get; set; }
+        public string MadinahToMakkahBusNumber { get; set; }
+        public string MadinahToAirportBusNumber { get; set; }
+        public string MakkahToAirportBusNumber { get; set; }
         public string Photo { get; set; }
         public string ContactNo { get; set; }
     

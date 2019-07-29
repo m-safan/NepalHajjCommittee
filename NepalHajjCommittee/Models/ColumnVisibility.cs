@@ -18,12 +18,33 @@
         private bool _contactNo = true;
         private bool _makkahRoomNo = true;
         private bool _madinahRoomNo = true;
-        private bool _busNumber = true;
+        private bool _MadinahToAirportBusNumber = true;
+        private bool _MakkahToAirportBusNumber = true;
+        private bool _MadinahToMakkahBusNumber = true;
+        private bool _MakkahToMadinahBusNumber = true;
 
-        public bool BusNumber
+        public bool MadinahToAirportBusNumber
         {
-            get { return _busNumber; }
-            set { SetProperty(ref _busNumber, value); }
+            get { return _MadinahToAirportBusNumber; }
+            set { SetProperty(ref _MadinahToAirportBusNumber, value); }
+        }
+
+        public bool MakkahToAirportBusNumber
+        {
+            get { return _MakkahToAirportBusNumber; }
+            set { SetProperty(ref _MakkahToAirportBusNumber, value); }
+        }
+
+        public bool MadinahToMakkahBusNumber
+        {
+            get { return _MadinahToMakkahBusNumber; }
+            set { SetProperty(ref _MadinahToMakkahBusNumber, value); }
+        }
+
+        public bool MakkahToMadinahBusNumber
+        {
+            get { return _MakkahToMadinahBusNumber; }
+            set { SetProperty(ref _MakkahToMadinahBusNumber, value); }
         }
 
         public bool MadinahRoomNo

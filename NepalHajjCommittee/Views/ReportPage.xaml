@@ -146,7 +146,10 @@
                 <controls:TextColumn Header="Departure Date Madinah" Binding="{Binding DepartureDateMadinah}"/>
                 <controls:TextColumn Header="Room No Makkah" Binding="{Binding MakkahRoomNo}"/>
                 <controls:TextColumn Header="Room No Madinah" Binding="{Binding MadinahRoomNo}"/>
-                <controls:TextColumn Header="Bus Number" Binding="{Binding BusNumber}" />
+                <controls:TextColumn Header="Madinah To Airport Bus Number" Binding="{Binding MadinahToAirportBusNumber}" />
+                <controls:TextColumn Header="Makkah To Airport Bus Number" Binding="{Binding MakkahToAirportBusNumber}" />
+                <controls:TextColumn Header="Madinah To Makkah Bus Number" Binding="{Binding MadinahToMakkahBusNumber}" />
+                <controls:TextColumn Header="Makkah To Madinah Bus Number" Binding="{Binding MakkahToMadinahBusNumber}" />
             </DataGrid.Columns>
         </DataGrid>
 

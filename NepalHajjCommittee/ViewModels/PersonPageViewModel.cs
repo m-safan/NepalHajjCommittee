@@ -38,7 +38,7 @@ namespace NepalHajjCommittee.ViewModels
             {
                 try
                 {
-                    if (string.IsNullOrEmpty(PersonModel.Photo)) return null;
+                    if (PersonModel == null || string.IsNullOrEmpty(PersonModel.Photo)) return null;
 
                     var bitmap = new BitmapImage();
                     bitmap.BeginInit();
@@ -105,7 +105,10 @@ namespace NepalHajjCommittee.ViewModels
             _fromDatabase = false;
             PersonModel = new Person
             {
-                BusNumber = string.Empty,
+                MadinahToAirportBusNumber = string.Empty,
+                MakkahToAirportBusNumber = string.Empty,
+                MadinahToMakkahBusNumber = string.Empty,
+                MakkahToMadinahBusNumber = string.Empty,
                 Gender = string.Empty,
                 Name = string.Empty,
                 PassportNo = string.Empty,

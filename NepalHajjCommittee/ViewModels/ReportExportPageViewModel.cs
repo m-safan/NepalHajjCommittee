@@ -77,8 +77,14 @@ namespace NepalHajjCommittee.ViewModels
                 AddHeader(stringBuilder, "Makkah Room No");
             if (ColumnVisibility.MadinahRoomNo)
                 AddHeader(stringBuilder, "Madinah Room No");
-            if (ColumnVisibility.BusNumber)
-                AddHeader(stringBuilder, "Bus Number");
+            if (ColumnVisibility.MadinahToAirportBusNumber)
+                AddHeader(stringBuilder, "Madinah To Airport Bus Number");
+            if (ColumnVisibility.MakkahToAirportBusNumber)
+                AddHeader(stringBuilder, "Makkah To Airport Bus Number");
+            if (ColumnVisibility.MadinahToMakkahBusNumber)
+                AddHeader(stringBuilder, "Madinah To Makkah Bus Number");
+            if (ColumnVisibility.MakkahToMadinahBusNumber)
+                AddHeader(stringBuilder, "Makkah To Madinah Bus Number");
 
             stringBuilder.Append("</tr></thead><tbody>");
 
@@ -111,8 +117,14 @@ namespace NepalHajjCommittee.ViewModels
                     AddData(stringBuilder, x.MakkahRoomNo);
                 if (ColumnVisibility.MadinahRoomNo)
                     AddData(stringBuilder, x.MadinahRoomNo);
-                if (ColumnVisibility.BusNumber)
-                    AddData(stringBuilder, x.BusNumber);
+                if (ColumnVisibility.MadinahToAirportBusNumber)
+                    AddData(stringBuilder, x.MadinahToAirportBusNumber);
+                if (ColumnVisibility.MakkahToAirportBusNumber)
+                    AddData(stringBuilder, x.MakkahToAirportBusNumber);
+                if (ColumnVisibility.MadinahToMakkahBusNumber)
+                    AddData(stringBuilder, x.MadinahToMakkahBusNumber);
+                if (ColumnVisibility.MakkahToMadinahBusNumber)
+                    AddData(stringBuilder, x.MakkahToMadinahBusNumber);
                 stringBuilder.Append("</tr>");
             });
 
