@@ -48,7 +48,7 @@ namespace NepalHajjCommittee.ViewModels
         {
             StringBuilder stringBuilder = new StringBuilder();
 
-            stringBuilder.Append("<html><body><table><thead><tr><th><table style=\"width:100%\"><tr><td width=\"33%\"><img align=right height=100 style=\"width:2in\" src=\"embasy.jpg\"/></td><td width=\"auto\"><h1 align=center>Nepal Hajj Committee</h4></td><td width=\"auto\"><img align=left height=90 width=90 src=\"flag.png\"/></td></tr></table><hr/></th></tr></thead><tbody><tr><td>");
+            stringBuilder.Append("<html><body><table><thead><tr><th><table style=\"width:100%\"><tr><td width=\"33%\"><img align=right height=100 style=\"width:2in\" src=\"embasy.jpg\"/></td><td width=\"auto\"><h1 align=center>NEPAL HAJJ COMMITTEE</h4></td><td width=\"auto\"><img align=left height=90 width=90 src=\"flag.png\"/></td></tr></table><hr/></th></tr></thead><tbody><tr><td>");
             stringBuilder.Append("<table border><thead><tr>");
 
             if (ColumnVisibility.Name)

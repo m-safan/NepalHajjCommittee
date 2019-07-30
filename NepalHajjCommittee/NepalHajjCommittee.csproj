@@ -280,6 +280,9 @@
       <DependentUpon>DBEntityModel.edmx</DependentUpon>
       <LastGenOutput>DBEntityModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\Emblem_of_Nepal.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\home ministry.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

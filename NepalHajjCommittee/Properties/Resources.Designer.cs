@@ -83,6 +83,16 @@ namespace NepalHajjCommittee.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Emblem_of_Nepal {
+            get {
+                object obj = ResourceManager.GetObject("Emblem_of_Nepal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap home_ministry {
             get {
                 object obj = ResourceManager.GetObject("home_ministry", resourceCulture);
