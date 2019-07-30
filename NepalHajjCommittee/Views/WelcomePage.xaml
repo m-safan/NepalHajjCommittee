@@ -4,6 +4,7 @@
              xmlns:prism="http://prismlibrary.com/"             
              prism:ViewModelLocator.AutoWireViewModel="True">
     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Image Source="/NepalHajjCommittee;component/Resources/861896.jpg" Stretch="None"></Image>
+        <Image Source="/Resources/home ministry.jpg" Stretch="None"></Image>
+        <TextBlock Text="NEPAL HAJJ COMMITTEE" Style="{StaticResource FeatureHeading}"></TextBlock>
     </StackPanel>
 </UserControl>
